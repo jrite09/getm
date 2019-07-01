@@ -1,0 +1,22 @@
+{% extends "monitor/layout.html" %}
+
+{% block title %}
+    getm - Make an Account
+{% endblock %}
+
+{% block body %}
+    <h1>Want to make an account?</h1>
+    <h2>Fill out the form below</h2>
+    <form action="{% url 'registered'  %}" method="POST">
+        {% csrf_token %}
+        <text>Email Address:</text>
+        <input type="text" name="email" placeholder="Email Address">
+        <br>
+        <text>Username:</text>
+        <input type='text' name='username' placeholder="Username">
+        <br>
+        <text>Password:</text>
+        <input type='password' name='password' placeholder="Password">
+        <button>Create Account</button>
+    </form>
+{% endblock %}

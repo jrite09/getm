@@ -6,4 +6,14 @@
 
 {% block body %}
     <h1>Welcome to getm, an Old School Runescape Grand Exchange Transaction Monitor</h1>
+    <a href="{% url 'register' %}">Make an account</a>
+    
+    <br>
+
+    <h2>Look for an item:</h2>
+    <form action="{% url 'searching' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="query">
+        <button>Search</button>
+    </form>
 {% endblock %}
